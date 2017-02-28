@@ -4,7 +4,7 @@
 ##########################################
 ##########################################
 
-library_path = "<current_git>"
+peach_shared_path = "<current_git>/PeachShared"
 
 schemas = {
     "workflow":"<current_git>/PeachShared/schemas/workflow.avsc"
@@ -30,6 +30,8 @@ mysql_info = {
 ###### Secondary CONFIG SETTINGS #########
 ##########################################
 ##########################################
+
+logfile = "backendlog"
 
 events = {
 "workflow_execute-workflow":"Workflow_ExecuteWorkflow",
@@ -59,7 +61,7 @@ def get_service_hub_path():
     return service_hub_path
 
 def get_library_path():
-    return library_path
+    return peach_shared_path
 
 def get_event(id):
     return events.get(id)
@@ -70,7 +72,7 @@ def get_server_address(id):
 import logging
 
 def get_logfile_path():
-    return "backendlog"
+    return logfile
 
 def get_level():
     return logging.INFO
