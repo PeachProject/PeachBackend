@@ -1,0 +1,5 @@
+*.pyc
+PeachBackend/config/peachSharedConfig.py
+*.swp
+backendlog
+.arcconfig

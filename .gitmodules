@@ -1,0 +1,3 @@
+[submodule "PeachShared"]
+	path = PeachShared
+	url = https://github.com/PeachProject/PeachShared.git

@@ -1,0 +1,23 @@
+generator.py
+
+Generates a binary avro representation and a python script of the given parameters using the serviceSchema.avsc.
+
+Examples:
+python generator.py -id 1 -n "MyService" -v 1 -d "A human readable description" -ip nameOfInPort1 nameOfInPort2 -op nameOfOutPort1 -p "MachinesLikeReadingThisName" "Humans like reading this name" 1 -p "KeyForMachine" "NameForHuman" 2 -s /path/to/service/schema.avsc -sd /path/to/service/dir -cn configname.extension
+
+python generator.py -id "AwesomeService" -n "Awesome service" -v 1 -d "Does awesome stuff" -ip data_in1 data_in2 data_in3 -op data_out1 data_out2 -p "parameter1" "HU readable name of parameter 1" 1 -p "parameter2" "HU readable name of parameter 2" 2 -s /home/christian/peachschemata/serviceSchema.avsc -sd /home/christian/serviceStorage -cn service.config
+
+
+service_list_generator.py
+
+Creates a list of all peach services in a given directory and all sub directories. Can write the list into a file.
+
+Example:
+python service_list_generator.py -d /home/christian/peachservices -i ".git" -o /home/christian/allservices.csv
+
+service_list_producer.py
+
+Creates a schedule that sends avro messages through kafka containing serialized service configurations.
+
+python service_list_producer.py  -d /home/henry/Schreibtisch/PeachServices/dummy_services/ -i ".git" -k vm-0-189.ostk.dkfz-heidelberg.de:9092 -sp /home/henry/Schreibtisch/PeachWebServer/schemas/serviceSchema.avsc -kt "Service_serviceListUpdated" -s 1
+
