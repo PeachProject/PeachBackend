@@ -22,7 +22,7 @@ mysql_info = {
     "host": "<mysql_host>",
     "user": "<mysql_user>",
     "password": "<mysql_pw>",
-    "database": "<msql_database>"
+    "database": "<mysql_database>"
 }
 
 ##########################################
