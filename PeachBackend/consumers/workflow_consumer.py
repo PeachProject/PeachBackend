@@ -55,7 +55,7 @@ def start(kafka_server_address, workflow_schema_path, queue_path, service_hub_pa
             ts = time.time()
             timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
             #TODO: Set priority dynamically somehow
-            query = "INSERT INTO {} VALUES (NULL, '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}');".format(
+            query = "INSERT INTO {} VALUES (NULL, '{}', '{}', '{}', '{}', '{}', '{}', '{}', {}, '{}', '{}');".format(
                 table,
                 workflow["user"],
                 filename,
@@ -64,7 +64,7 @@ def start(kafka_server_address, workflow_schema_path, queue_path, service_hub_pa
                 "0",
                 "still unknown #todo",
                 timestamp,
-                "",
+                "DEFAULT(finished_date)",
                 "1",
                 ""
             )

@@ -133,8 +133,10 @@ def glue_graph(node_strings):
     return dsk
 
 def generate_sys_paths(service_utility_path, library_path):
+    import os
     s = "import sys\nsys.path.insert(0, '{}')\n".format(service_utility_path)
     s += "sys.path.insert(0, '{}')\n".format(library_path)
+    s += "sys.path.insert(0, '{}')\n".format(os.path.join(library_path, "library", "ServiceUtility"))
     return s
 
 
